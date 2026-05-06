@@ -8,16 +8,16 @@ public class ScheduledCourse {
     private int timeSlot;
 
     public ScheduledCourse(int courseId, int instructorId, int roomId, int timeSlot) {
-        this.courseId = courseId;
+        this.courseId     = courseId;
         this.instructorId = instructorId;
-        this.roomId = roomId;
-        this.timeSlot = timeSlot;
+        this.roomId       = roomId;
+        this.timeSlot     = timeSlot;
     }
 
-    public int getCourseId()      { return courseId; }
-    public int getInstructorId()  { return instructorId; }
-    public int getRoomId()        { return roomId; }
-    public int getTimeSlot()      { return timeSlot; }
+    public int getCourseId()     { return courseId; }
+    public int getInstructorId() { return instructorId; }
+    public int getRoomId()       { return roomId; }
+    public int getTimeSlot()     { return timeSlot; }
 
     @Override
     public String toString() {

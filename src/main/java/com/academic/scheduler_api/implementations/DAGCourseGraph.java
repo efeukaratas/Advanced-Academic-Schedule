@@ -5,11 +5,9 @@ import java.util.List;
 
 public class DAGCourseGraph {
 
-    // Komşuluk listesi: adjList[i] → ders i'nin önkoşulunu gerektirdiği dersler
     private List<Integer>[] adjList;
-    // Her dersin kaç önkoşulu var
-    private int[] inDegree;
-    private int numCourses;
+    private int[]           inDegree;
+    private int             numCourses;
 
     @SuppressWarnings("unchecked")
     public void initialize(int numCourses) {
@@ -21,7 +19,7 @@ public class DAGCourseGraph {
             adjList[i] = new ArrayList<>();
     }
 
-    // "from tamamlanmadan to başlayamaz" ilişkisini ekle
+    // "from tamamlanmadan to başlayamaz"
     public void addPrerequisite(int from, int to) {
         adjList[from].add(to);
         inDegree[to]++;
@@ -31,11 +29,6 @@ public class DAGCourseGraph {
         return adjList[courseId];
     }
 
-    public int[] getInDegree() {
-        return inDegree;
-    }
-
-    public int getNumCourses() {
-        return numCourses;
-    }
+    public int[] getInDegree()   { return inDegree; }
+    public int getNumCourses()   { return numCourses; }
 }

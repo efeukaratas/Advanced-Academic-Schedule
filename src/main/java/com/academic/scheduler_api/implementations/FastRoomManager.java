@@ -2,7 +2,6 @@ package com.academic.scheduler_api.implementations;
 
 public class FastRoomManager {
 
-    // 2D boolean matris: [odaId][zamanDilimi] → true = boş
     private boolean[][] roomFree;
     private int[]       capacities;
     private int numRooms;
@@ -19,7 +18,7 @@ public class FastRoomManager {
                 roomFree[r][t] = true;
     }
 
-    // O(1) — oda o saatte boş mu?
+    // O(1) — direkt indeks erişimi
     public boolean isFree(int roomId, int timeSlot) {
         return roomFree[roomId][timeSlot];
     }
@@ -31,4 +30,7 @@ public class FastRoomManager {
     public void markOccupied(int roomId, int timeSlot) {
         roomFree[roomId][timeSlot] = false;
     }
+
+    public int getNumRooms()     { return numRooms; }
+    public int getNumTimeSlots() { return numTimeSlots; }
 }
