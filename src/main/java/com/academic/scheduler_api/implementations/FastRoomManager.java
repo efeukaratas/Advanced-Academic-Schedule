@@ -1,5 +1,9 @@
 package com.academic.scheduler_api.implementations;
 
+/**
+ * FastRoomManager — O(1) oda musaitlik kontrolu.
+ * CSP destegi icin markFree (backtracking geri alma) eklendi.
+ */
 public class FastRoomManager {
 
     private boolean[][] roomFree;
@@ -18,7 +22,7 @@ public class FastRoomManager {
                 roomFree[r][t] = true;
     }
 
-    // O(1) — direkt indeks erişimi
+    // O(1)
     public boolean isFree(int roomId, int timeSlot) {
         return roomFree[roomId][timeSlot];
     }
@@ -29,6 +33,11 @@ public class FastRoomManager {
 
     public void markOccupied(int roomId, int timeSlot) {
         roomFree[roomId][timeSlot] = false;
+    }
+
+    /** Backtracking: atamayi geri al */
+    public void markFree(int roomId, int timeSlot) {
+        roomFree[roomId][timeSlot] = true;
     }
 
     public int getNumRooms()     { return numRooms; }

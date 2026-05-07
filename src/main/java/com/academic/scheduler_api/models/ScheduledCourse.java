@@ -7,6 +7,7 @@ public class ScheduledCourse {
     private int    instructorId;
     private String instructorName;
     private int    roomId;
+    private String roomName;
     private int    roomCapacity;
     private int    timeSlotId;
     private String dayName;
@@ -45,6 +46,7 @@ public class ScheduledCourse {
     public int    getInstructorId()      { return instructorId; }
     public String getInstructorName()    { return instructorName; }
     public int    getRoomId()            { return roomId; }
+    public String getRoomName()          { return roomName; }
     public int    getRoomCapacity()      { return roomCapacity; }
     public int    getTimeSlotId()        { return timeSlotId; }
     public String getDayName()           { return dayName; }
@@ -58,6 +60,7 @@ public class ScheduledCourse {
     // ---------- Setters ----------
     public void setCourseName(String n)        { this.courseName = n; }
     public void setInstructorName(String n)    { this.instructorName = n; }
+    public void setRoomName(String n)          { this.roomName = n; }
     public void setRoomCapacity(int c)         { this.roomCapacity = c; }
     public void setEnrollmentCount(int e)      { this.enrollmentCount = e; }
     public void setCriticalPathLength(int cpl) { this.criticalPathLength = cpl; }

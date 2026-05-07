@@ -21,12 +21,24 @@ public class FacultyPreference {
     @Column(name = "is_available", nullable = false)
     private boolean isAvailable;
 
+    // Tercih oncelik puani: 0 = yasakli, 1 = istenmiyor, 2 = farketmez, 3 = tercih ediliyor
+    @Column(name = "preference_score")
+    private int preferenceScore;
+
     public FacultyPreference() {}
 
     public FacultyPreference(int instructorId, int slot, boolean isAvailable) {
-        this.instructorId = instructorId;
-        this.slot = slot;
-        this.isAvailable = isAvailable;
+        this.instructorId    = instructorId;
+        this.slot            = slot;
+        this.isAvailable     = isAvailable;
+        this.preferenceScore = isAvailable ? 2 : 0;
+    }
+
+    public FacultyPreference(int instructorId, int slot, boolean isAvailable, int preferenceScore) {
+        this.instructorId    = instructorId;
+        this.slot            = slot;
+        this.isAvailable     = isAvailable;
+        this.preferenceScore = preferenceScore;
     }
 
     public Long getId() { return id; }
@@ -40,4 +52,7 @@ public class FacultyPreference {
 
     public boolean isAvailable() { return isAvailable; }
     public void setAvailable(boolean available) { isAvailable = available; }
+
+    public int getPreferenceScore() { return preferenceScore; }
+    public void setPreferenceScore(int s) { this.preferenceScore = s; }
 }
